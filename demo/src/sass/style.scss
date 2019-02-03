@@ -1,0 +1,12 @@
+@import 'node_modules/coffeekraken-sugar/index';
+@import '../../../index';
+
+@include s-setup(());
+@include s-init();
+@include s-classes();
+
+@include s-pagination-classes();
+
+body {
+	padding: s-space(bigger);
+}

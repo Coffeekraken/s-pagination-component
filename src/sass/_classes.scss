@@ -1,0 +1,70 @@
+/**
+ * @name    component
+ * description
+ *
+ * @example   html
+ * <!-- example here -->
+ *
+ * @author    Olivier Bossel <olivier.bossel@gmail.com>
+ */
+
+/**
+ * Print out the bare and style component css
+ * @param 	{List<Color>} 		[$color=default primary secondary] 		The colors to generate
+ */
+@mixin s-pagination-classes(
+  $colors: default primary secondary
+) {
+  @include s-pagination-classes-bare();
+  @include s-pagination-classes-style($colors);
+}
+
+/**
+ * Print out the bare component css
+ */
+@mixin s-pagination-classes-bare() {
+  @include s-component('s-pagination') {
+    .#{s-component()} {
+      user-select: none;
+    }
+    .#{s-component()}__item {
+      display: inline-block;
+      padding: s-lnf(padding-horizontal) s-lnf(padding-vertical);
+    }
+  }
+}
+
+/**
+ * Print out the style component css
+ * @param 	{List<Color>} 		[$color=default primary secondary] 		The colors to generate
+ */
+@mixin s-pagination-classes-style(
+  $colors: default primary secondary
+) {
+  @include s-component('s-pagination') {
+    @each $color in $colors {
+      $sel : '#{s-component()}[color="#{$color}"]';
+
+      @if $color == default {
+        $sel : "#{s-component()}";
+      }
+
+      #{$sel} {
+
+        .#{s-component()} {
+
+        }
+        .#{s-component()}__item {
+          background-color: s-color($color, -opacity .05);
+
+          &:hover,
+          &.active {
+            background-color: s-color($color);
+            color: white;
+          }
+        }
+
+      }
+    }
+  }
+}
