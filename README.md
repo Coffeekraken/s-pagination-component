@@ -29,7 +29,7 @@
 
 <p class="lead">Create simple and complexe pagination easily with this webcomponent</p>
 
-[![View demo](http://components.coffeekraken.io/assets/img/view-demo.png)](http://components.coffeekraken.io/app/pagination-component)
+[![View demo](http://components.coffeekraken.io/assets/img/view-demo.png)](http://components.coffeekraken.io/app/s-pagination-component)
 
 ## Table of content
 
@@ -81,6 +81,8 @@ Optionally you can generate a base css for your pagination like so:
 @import "node_modules/coffeekraken-s-pagination-component/index";
 @include s-pagination-classes($colors: default primary secondary);
 ```
+
+> This use the [sugar colors system](https://github.com/Coffeekraken/sugar/blob/master/doc/sass/colors.md)
 
 <a id="readme-changes"></a>
 

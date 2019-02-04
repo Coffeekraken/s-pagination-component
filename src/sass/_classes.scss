@@ -1,15 +1,22 @@
 /**
- * @name    component
- * description
+ * @name    SPaginationComponent
+ * Create simple and complexe pagination easily with this webcomponent
  *
  * @example   html
- * <!-- example here -->
+ * <s-pagination
+ *   pages="50"
+ *   current="10"
+ *   limit="5"
+ *   href="/comments/%d"
+ * ></s-pagination>
  *
  * @author    Olivier Bossel <olivier.bossel@gmail.com>
  */
 
 /**
  * Print out the bare and style component css
+ * Generated classes:
+ * - `.s-pagination[color="{color}"]`
  * @param 	{List<Color>} 		[$color=default primary secondary] 		The colors to generate
  */
 @mixin s-pagination-classes($colors: default primary secondary) {
@@ -19,12 +26,15 @@
 
 /**
  * Print out the bare component css
+ * Generated classes:
+ * - `.s-pagination`
  */
 @mixin s-pagination-classes-bare() {
   @include s-component("s-pagination") {
     .#{s-component()} {
       user-select: none;
     }
+
     .#{s-component()}__item {
       display: inline-block;
 
@@ -36,12 +46,14 @@
         text-decoration: none;
       }
     }
+
     .#{s-component()}__item--first,
     .#{s-component()}__item--last {
       a {
         letter-spacing: -0.1em;
       }
     }
+
     .#{s-component()}__item--disabled {
       pointer-events: none;
       opacity: 0.3;
@@ -51,6 +63,8 @@
 
 /**
  * Print out the style component css
+ * Generated classes:
+ * - `s-pagination[color="{color}"]`
  * @param 	{List<Color>} 		[$color=default primary secondary] 		The colors to generate
  */
 @mixin s-pagination-classes-style($colors: default primary secondary) {
@@ -63,8 +77,6 @@
       }
 
       #{$sel} {
-        .#{s-component()} {
-        }
         .#{s-component()}__item {
           a {
             background-color: s-color($color, -opacity 0.05);

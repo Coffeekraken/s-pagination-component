@@ -3,7 +3,7 @@ module.exports = {
   port: 3000,
 
   // title
-  title: "s-{component-name}-component",
+  title: "s-pagination-component",
 
   // layout
   layout: "right",
@@ -19,13 +19,28 @@ module.exports = {
     html: {
       language: "html",
       data: `
-        <h1 class="h3 m-b-small">
-          Coffeekraken s-{component-name}-component
-        </h1>
-        <p class="p m-b-bigger">
-          {component-description}
-        </p>
-        <!-- examples here... -->
+        <s-pagination pages="50" current="5" limit="5"></s-pagination>
+
+        <br />
+        <br />
+
+        <s-pagination
+          pages="50"
+          current="5"
+          limit="7"
+          color="primary"
+        ></s-pagination>
+
+        <br />
+        <br />
+
+        <s-pagination
+          style="font-size:10px"
+          pages="50"
+          current="5"
+          limit="15"
+          color="secondary"
+        ></s-pagination>
       `
     },
     css: {
@@ -39,13 +54,14 @@ module.exports = {
         body {
           padding: s-space(bigger);
         }
-        // component css here...
+        @import 'index';
+        @include s-pagination-classes();
       `
     },
     js: {
       language: "js",
       data: `
-        import Component from './dist/index'
+        import SPaginationComponent from './dist/index'
       `
     }
   }

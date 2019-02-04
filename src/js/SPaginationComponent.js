@@ -1,10 +1,23 @@
-import STemplateComponent from "coffeekraken-s-template-component"
-import constrain from "coffeekraken-sugar/js/utils/numbers/constrain"
-import range from "lodash/range"
-import sprintf from "coffeekraken-sugar/js/utils/strings/sprintf"
-import dispatchEvent from "coffeekraken-sugar/js/dom/dispatchEvent"
-import isOdd from "coffeekraken-sugar/js/utils/is/odd"
+import STemplateComponent from 'coffeekraken-s-template-component'
+import constrain from 'coffeekraken-sugar/js/utils/numbers/constrain'
+import range from 'lodash/range'
+import sprintf from 'coffeekraken-sugar/js/utils/strings/sprintf'
+import dispatchEvent from 'coffeekraken-sugar/js/dom/dispatchEvent'
+import isOdd from 'coffeekraken-sugar/js/utils/is/odd'
 
+/**
+ * Create simple and complexe pagination easily with this webcomponent
+ *
+ * @example    html
+ * <s-pagination
+ *   pages="50"
+ *   current="10"
+ *   limit="5"
+ *   href="/comments/%d"
+ * ></s-pagination>
+ *
+ * @author    Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
+ */
 export default class SPaginationComponent extends STemplateComponent {
   /**
    * Default props
@@ -13,6 +26,12 @@ export default class SPaginationComponent extends STemplateComponent {
    */
   static get defaultProps() {
     return {
+      /**
+       * Specify a function to call on page change.
+       * This will have as parameter the `newPage` and the `previousPage`
+       * @prop
+       * @type    {Function}
+       */
       onchange: null,
 
       /**
@@ -30,7 +49,7 @@ export default class SPaginationComponent extends STemplateComponent {
       current: null,
 
       /**
-       * Specify a limit of pages to show at a time. This nu,ber has to be an odd one
+       * Specify a limit of pages to show at a time. This number has to be an odd one
        * @prop
        * @type    {Integer}
        */
@@ -45,32 +64,36 @@ export default class SPaginationComponent extends STemplateComponent {
       href: null,
 
       /**
-       * Specify if want to show the "first" item materialised by a "«". Can be false or a string to use as label
+       * Specify if want to show the "first" item materialised by a "<<".
+       * Can be `false` or a string to use as label
        * @prop
        * @type    {Boolean|String}
        */
-      showFirst: "<<",
+      showFirst: '<<',
 
       /**
-       * Specify if want to show the "last" item materialised by a "»". Can be false or a string to use as label
+       * Specify if want to show the "last" item materialised by a ">>".
+       * Can be `false` or a string to use as label
        * @prop
        * @type    {Boolean|String}
        */
-      showLast: ">>",
+      showLast: '>>',
 
       /**
-       * Specify if want to show the "previous" item materialised by a "<". Can be false or a string to use as label
+       * Specify if want to show the "previous" item materialised by a "<".
+       * Can be `false` or a string to use as label
        * @prop
        * @type    {Boolean|String}
        */
-      showPrevious: "<",
+      showPrevious: '<',
 
       /**
-       * Specify if want to show the "next" item materialised by a ">". Can be false or a string to use as label
+       * Specify if want to show the "next" item materialised by a ">".
+       * Can be `false` or a string to use as label
        * @prop
        * @type    {Boolean|String}
        */
-      showNext: ">"
+      showNext: '>'
     }
   }
 
@@ -89,7 +112,7 @@ export default class SPaginationComponent extends STemplateComponent {
    * @protected
    */
   static get physicalProps() {
-    return ["pages", "current"]
+    return ['pages', 'current']
   }
 
   /**
@@ -98,7 +121,7 @@ export default class SPaginationComponent extends STemplateComponent {
    * @protected
    */
   static get requiredProps() {
-    return ["pages", "current"]
+    return ['pages', 'current']
   }
 
   /**
@@ -161,7 +184,7 @@ export default class SPaginationComponent extends STemplateComponent {
     super.componentWillReceiveProp(name, newVal, oldVal)
 
     switch (name) {
-      case "current":
+      case 'current':
         if (newVal === oldVal) return
         this._changePageHandler(newVal, oldVal)
         break
@@ -185,7 +208,7 @@ export default class SPaginationComponent extends STemplateComponent {
      *   // do something on page change
      * })
      */
-    dispatchEvent(this, "change", {
+    dispatchEvent(this, 'change', {
       newPage,
       previousPage
     })
@@ -281,7 +304,7 @@ export default class SPaginationComponent extends STemplateComponent {
             }__item--first ${
               this.props.current === 1
                 ? `${this.componentNameDash}__item--disabled`
-                : ""
+                : ''
             }`}
           >
             {this.props.href && (
@@ -311,7 +334,7 @@ export default class SPaginationComponent extends STemplateComponent {
             }__item--previous ${
               this.props.current === 1
                 ? `${this.componentNameDash}__item--disabled`
-                : ""
+                : ''
             }`}
           >
             {this.props.href && (
@@ -340,7 +363,7 @@ export default class SPaginationComponent extends STemplateComponent {
         {pages.map(page => (
           <li
             class={`${this.componentNameDash}__item ${
-              this.props.current === page ? "active" : ""
+              this.props.current === page ? 'active' : ''
             }`}
           >
             {this.props.href && (
@@ -370,7 +393,7 @@ export default class SPaginationComponent extends STemplateComponent {
             }__item--next ${
               this.props.current === this.props.pages
                 ? `${this.componentNameDash}__item--disabled`
-                : ""
+                : ''
             }`}
           >
             {this.props.href && (
@@ -400,7 +423,7 @@ export default class SPaginationComponent extends STemplateComponent {
             }__item--last ${
               this.props.current === this.props.pages
                 ? `${this.componentNameDash}__item--disabled`
-                : ""
+                : ''
             }`}
           >
             {this.props.href && (
