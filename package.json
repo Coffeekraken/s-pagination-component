@@ -1,12 +1,12 @@
 {
-  "name": "coffeekraken-s-component-name-component",
+  "name": "coffeekraken-s-pagination-component",
   "version": "1.0.0",
-  "description": "component-description",
+  "description": "Create simple and complexe pagination easily with this webcomponent",
   "main": "dist/index.js",
   "homepage": "http://coffeekraken.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/coffeekraken/s-{component-name}-component"
+    "url": "https://github.com/coffeekraken/s-pagination-component"
   },
   "watch": {
     "doc:js": {
@@ -78,7 +78,8 @@
   "dependencies": {
     "coffeekraken-s-template-component": "^1.0.1",
     "coffeekraken-sugar": "^1.0.58",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "@babel/plugin-transform-react-jsx": "^7.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
@@ -100,7 +101,6 @@
     "@babel/plugin-proposal-throw-expressions": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-import-meta": "^7.0.0",
-    "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@babel/preset-env": "^7.3.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
@@ -113,7 +113,7 @@
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.6.0",
     "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "git-changelog": "^1.1.2",
     "http-server": "^0.11.1",
@@ -125,7 +125,7 @@
     "regenerator-runtime": "^0.13.1",
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",
-    "webpack": "^4.29.0",
+    "webpack": "^4.29.1",
     "webpack-cli": "^3.2.1"
   }
 }
