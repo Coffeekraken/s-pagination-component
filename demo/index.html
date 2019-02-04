@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<link rel="stylesheet" href="dist/css/style.css" />
-</head>
-<body>
+  <head>
+    <link rel="stylesheet" href="dist/css/style.css" />
+  </head>
+  <body>
+    <s-pagination pages="50" current="5" limit="5"></s-pagination>
 
-  <s-pagination pages="5" current="5" limit="20"></s-pagination>
+    <br />
+    <br />
 
-	<script src="dist/js/app.js"></script>
-</body>
+    <s-pagination
+      pages="50"
+      current="5"
+      limit="7"
+      color="primary"
+    ></s-pagination>
+
+    <br />
+    <br />
+
+    <s-pagination
+      style="font-size:10px"
+      pages="50"
+      current="5"
+      limit="15"
+      color="secondary"
+    ></s-pagination>
+
+    <script src="dist/js/app.js"></script>
+  </body>
 </html>
