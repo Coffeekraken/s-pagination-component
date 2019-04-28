@@ -207,16 +207,21 @@
   width: 100%;
 }
 
-.clearfix, .clearfix-micro {
+.clearfix,
+.clearfix-micro {
   zoom: 1;
 }
 
-.clearfix:before, .clearfix-micro:before, .clearfix:after, .clearfix-micro:after {
-  content: " ";
+.clearfix:before,
+.clearfix-micro:before,
+.clearfix:after,
+.clearfix-micro:after {
+  content: ' ';
   display: table;
 }
 
-.clearfix:after, .clearfix-micro:after {
+.clearfix:after,
+.clearfix-micro:after {
   clear: both;
 }
 
@@ -2239,7 +2244,8 @@
 	 */
 }
 
-.clearfix, .clearfix-micro {
+.clearfix,
+.clearfix-micro {
   /**
 	 * @name 		```.clearfix```
 	 * Apply the micro clearfix on the element
@@ -2373,7 +2379,9 @@
 	 */
 }
 
-.no-transitions, .no-transitions:before, .no-transitions:after {
+.no-transitions,
+.no-transitions:before,
+.no-transitions:after {
   transition: none !important;
 }
 
@@ -2390,8 +2398,12 @@
 	 */
 }
 
-.clear-transitions, .clear-transitions:before, .clear-transitions:after,
-.clear-transitions *, .clear-transitions *:before, .clear-transitions *:after {
+.clear-transitions,
+.clear-transitions:before,
+.clear-transitions:after,
+.clear-transitions *,
+.clear-transitions *:before,
+.clear-transitions *:after {
   transition: none !important;
 }
 
@@ -2408,7 +2420,9 @@
 	 */
 }
 
-.no-animations, .no-animations:before, .no-animations:after {
+.no-animations,
+.no-animations:before,
+.no-animations:after {
   animation: none !important;
 }
 
@@ -2425,8 +2439,12 @@
 	 */
 }
 
-.clear-animations, .clear-animations:before, .clear-animations:after,
-.clear-animations *, .clear-animations *:before, .clear-animations *:after {
+.clear-animations,
+.clear-animations:before,
+.clear-animations:after,
+.clear-animations *,
+.clear-animations *:before,
+.clear-animations *:after {
   animation: none !important;
 }
 
@@ -2443,7 +2461,9 @@
 	 */
 }
 
-.no-transmations, .no-transmations:before, .no-transmations:after {
+.no-transmations,
+.no-transmations:before,
+.no-transmations:after {
   transition: none !important;
   animation: none !important;
 }
@@ -2461,8 +2481,12 @@
 	 */
 }
 
-.clear-transmations, .clear-transmations:before, .clear-transmations:after,
-.clear-transmations *, .clear-transmations *:before, .clear-transmations *:after {
+.clear-transmations,
+.clear-transmations:before,
+.clear-transmations:after,
+.clear-transmations *,
+.clear-transmations *:before,
+.clear-transmations *:after {
   transition: none !important;
   animation: none !important;
 }
@@ -2663,46 +2687,117 @@
  * @author 			Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
- * @name    component
- * description
+ * @name    SPaginationComponent
+ * Create simple and complexe pagination easily with this webcomponent
  *
  * @example   html
- * <!-- example here -->
+ * <s-pagination
+ *   pages="50"
+ *   current="10"
+ *   limit="5"
+ *   href="/comments/%d"
+ * ></s-pagination>
  *
  * @author    Olivier Bossel <olivier.bossel@gmail.com>
  */
 /**
  * Print out the bare and style component css
- * @param 	{List<Color>} 		[$color=default] 		The color to generate
- */
-/**
- * Print out the bare component css
- */
-/**
- * Print out the style component css
- * @param 	{Color} 		[$color=default] 		The color to generate
- */
-/**
- * @name    component
- * description
- *
- * @example   html
- * <!-- example here -->
- *
- * @author    Olivier Bossel <olivier.bossel@gmail.com>
- */
-/**
- * Print out the bare and style component css
+ * Generated classes:
+ * - `.s-pagination[color="{color}"]`
  * @param 	{List<Color>} 		[$color=default primary secondary] 		The colors to generate
  */
 /**
  * Print out the bare component css
+ * Generated classes:
+ * - `.s-pagination`
  */
 /**
  * Print out the style component css
+ * Generated classes:
+ * - `s-pagination[color="{color}"]`
  * @param 	{List<Color>} 		[$color=default primary secondary] 		The colors to generate
  */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -2711,7 +2806,17 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -2719,20 +2824,24 @@ body {
   line-height: 1;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after {
+blockquote:before,
+blockquote:after {
   content: '';
   content: none;
 }
 
-q:before, q:after {
+q:before,
+q:after {
   content: '';
   content: none;
 }
@@ -2811,7 +2920,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -2820,9 +2931,9 @@ a {
 }
 
 html {
-  font-size: 14Px;
+  font-size: 14px;
   color: #848e91;
-  font-family: "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
   font-weight: normal;
 }
 
@@ -2904,7 +3015,7 @@ body {
 			 * </div>
 			 */
 .f-default {
-  font-family: "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
   font-weight: normal;
 }
 
@@ -2930,7 +3041,7 @@ body {
 			 * </div>
 			 */
 .f-code {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
   font-weight: normal;
 }
 
@@ -4256,33 +4367,36 @@ s-pagination .s-pagination__item a {
   transition: all 0.3s cubic-bezier(1, 0, 0, 1) 0s;
 }
 
-s-pagination .s-pagination__item:hover a, s-pagination .s-pagination__item.active a {
+s-pagination .s-pagination__item:hover a,
+s-pagination .s-pagination__item.active a {
   background-color: #848e91;
   color: white;
   transform: scale(1.1, 1.1);
   z-index: 1;
 }
 
-s-pagination[color="primary"] .s-pagination__item a {
+s-pagination[color='primary'] .s-pagination__item a {
   background-color: rgba(242, 188, 43, 0.05);
   transform: scale(1, 1);
   transition: all 0.3s cubic-bezier(1, 0, 0, 1) 0s;
 }
 
-s-pagination[color="primary"] .s-pagination__item:hover a, s-pagination[color="primary"] .s-pagination__item.active a {
+s-pagination[color='primary'] .s-pagination__item:hover a,
+s-pagination[color='primary'] .s-pagination__item.active a {
   background-color: #f2bc2b;
   color: white;
   transform: scale(1.1, 1.1);
   z-index: 1;
 }
 
-s-pagination[color="secondary"] .s-pagination__item a {
+s-pagination[color='secondary'] .s-pagination__item a {
   background-color: rgba(43, 52, 56, 0.05);
   transform: scale(1, 1);
   transition: all 0.3s cubic-bezier(1, 0, 0, 1) 0s;
 }
 
-s-pagination[color="secondary"] .s-pagination__item:hover a, s-pagination[color="secondary"] .s-pagination__item.active a {
+s-pagination[color='secondary'] .s-pagination__item:hover a,
+s-pagination[color='secondary'] .s-pagination__item.active a {
   background-color: #2b3438;
   color: white;
   transform: scale(1.1, 1.1);

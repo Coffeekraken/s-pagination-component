@@ -1,4 +1,5 @@
-import STemplateComponent from 'coffeekraken-s-template-component'
+import SLitHtmlComponent from 'coffeekraken-s-lit-html-component'
+import { html } from 'lit-html'
 import constrain from 'coffeekraken-sugar/js/utils/numbers/constrain'
 import range from 'lodash/range'
 import sprintf from 'coffeekraken-sugar/js/utils/strings/sprintf'
@@ -18,7 +19,7 @@ import isOdd from 'coffeekraken-sugar/js/utils/is/odd'
  *
  * @author    Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
-export default class SPaginationComponent extends STemplateComponent {
+export default class SPaginationComponent extends SLitHtmlComponent {
   /**
    * Default props
    * @definition    SWebComponent.defaultProps
@@ -188,6 +189,7 @@ export default class SPaginationComponent extends STemplateComponent {
         if (newVal === oldVal) return
         this._changePageHandler(newVal, oldVal)
         break
+      default:
     }
   }
 
@@ -213,7 +215,9 @@ export default class SPaginationComponent extends STemplateComponent {
       previousPage
     })
     // chec if the onChange property exist
-    this.props.onchange && this.props.onchange(newPage, previousPage)
+    if (this.props.onchange) {
+      this.props.onchange(newPage, previousPage)
+    }
   }
 
   /**
@@ -252,7 +256,7 @@ export default class SPaginationComponent extends STemplateComponent {
   /**
    * Show last
    */
-  goToLast(e) {
+  goToLast() {
     this.props.current = this.props.pages
   }
 
@@ -295,160 +299,193 @@ export default class SPaginationComponent extends STemplateComponent {
 
     const pages = range(firstPage, lastPage + 1)
 
-    super.render(
-      <ul class={`${this.componentNameDash}`}>
-        {this.props.showFirst && (
-          <li
-            class={`${this.componentNameDash}__item ${
-              this.componentNameDash
-            }__item--first ${
-              this.props.current === 1
-                ? `${this.componentNameDash}__item--disabled`
-                : ''
-            }`}
-          >
-            {this.props.href && (
-              <a href={sprintf(this.props.href, 1)} title={1}>
-                {this.props.showFirst}
-              </a>
-            )}
-            {!this.props.href && (
-              <a
-                href={1}
-                title={1}
-                onClick={e => {
-                  e.preventDefault()
-                  this.goTo(1)
-                }}
+    super.render(html`
+      <ul class=${this.componentNameDash}>
+        ${this.props.showFirst
+          ? html`
+              <li
+                class=${`${this.componentNameDash}__item ${
+                  this.componentNameDash
+                }__item--first
+              ${
+                this.props.current === 1
+                  ? `${this.componentNameDash}__item--disabled`
+                  : ''
+              }`}
               >
-                {this.props.showFirst}
-              </a>
-            )}
-          </li>
+                ${this.props.href
+                  ? html`
+                      <a href=${sprintf(this.props.href, 1)} title="1">
+                        ${this.props.showFirst}
+                      </a>
+                    `
+                  : ''}
+                ${!this.props.href
+                  ? html`
+                      <a
+                        href="1"
+                        title="1"
+                        @click=${e => {
+                          e.preventDefault()
+                          this.goTo(1)
+                        }}
+                      >
+                        ${this.props.showFirst}
+                      </a>
+                    `
+                  : ''}
+              </li>
+            `
+          : ''}
+        ${this.props.showPrevious
+          ? html`
+              <li
+                class=${`${this.componentNameDash}__item ${
+                  this.componentNameDash
+                }__item--previous ${
+                  this.props.current === 1
+                    ? `${this.componentNameDash}__item--disabled`
+                    : ''
+                }`}
+              >
+                ${this.props.href
+                  ? html`
+                      <a
+                        href=${sprintf(this.props.href, previousPage)}
+                        title=${previousPage}
+                      >
+                        ${this.props.showPrevious}
+                      </a>
+                    `
+                  : ''}
+                ${!this.props.href
+                  ? html`
+                      <a
+                        href=${previousPage}
+                        title=${previousPage}
+                        @click=${e => {
+                          e.preventDefault()
+                          this.goTo(previousPage)
+                        }}
+                      >
+                        ${this.props.showPrevious}
+                      </a>
+                    `
+                  : ''}
+              </li>
+            `
+          : ''}
+        ${pages.map(
+          page => html`
+            <li
+              class=${`${this.componentNameDash}__item ${
+                this.props.current === page ? 'active' : ''
+              }`}
+            >
+              ${this.props.href
+                ? html`
+                    <a
+                      href=${sprintf(this.props.href, page.toString())}
+                      title=${page}
+                    >
+                      ${page}
+                    </a>
+                  `
+                : ''}
+              ${!this.props.href
+                ? html`
+                    <a
+                      href=${page}
+                      title=${page}
+                      @click=${e => {
+                        e.preventDefault()
+                        this.goTo(page)
+                      }}
+                    >
+                      ${page}
+                    </a>
+                  `
+                : ''}
+            </li>
+          `
         )}
-
-        {this.props.showPrevious && (
-          <li
-            class={`${this.componentNameDash}__item ${
-              this.componentNameDash
-            }__item--previous ${
-              this.props.current === 1
-                ? `${this.componentNameDash}__item--disabled`
-                : ''
-            }`}
-          >
-            {this.props.href && (
-              <a
-                href={sprintf(this.props.href, previousPage)}
-                title={previousPage}
+        ${this.props.showNext
+          ? html`
+              <li
+                class=${`${this.componentNameDash}__item ${
+                  this.componentNameDash
+                }__item--next ${
+                  this.props.current === this.props.pages
+                    ? `${this.componentNameDash}__item--disabled`
+                    : ''
+                }`}
               >
-                {this.props.showPrevious}
-              </a>
-            )}
-            {!this.props.href && (
-              <a
-                href={previousPage}
-                title={previousPage}
-                onClick={e => {
-                  e.preventDefault()
-                  this.goTo(previousPage)
-                }}
+                ${this.props.href
+                  ? html`
+                      <a
+                        href=${sprintf(this.props.href, nextPage)}
+                        title=${nextPage}
+                      >
+                        ${this.props.showNext}
+                      </a>
+                    `
+                  : ''}
+                ${!this.props.href
+                  ? html`
+                      <a
+                        href=${nextPage}
+                        title=${nextPage}
+                        @click=${e => {
+                          e.preventDefault()
+                          this.goTo(nextPage)
+                        }}
+                      >
+                        ${this.props.showNext}
+                      </a>
+                    `
+                  : ''}
+              </li>
+            `
+          : ''}
+        ${this.props.showLast
+          ? html`
+              <li
+                class=${`${this.componentNameDash}__item ${
+                  this.componentNameDash
+                }__item--last ${
+                  this.props.current === this.props.pages
+                    ? `${this.componentNameDash}__item--disabled`
+                    : ''
+                }`}
               >
-                {this.props.showPrevious}
-              </a>
-            )}
-          </li>
-        )}
-
-        {pages.map(page => (
-          <li
-            class={`${this.componentNameDash}__item ${
-              this.props.current === page ? 'active' : ''
-            }`}
-          >
-            {this.props.href && (
-              <a href={sprintf(this.props.href, page.toString())} title={page}>
-                {page}
-              </a>
-            )}
-            {!this.props.href && (
-              <a
-                href={page}
-                title={page}
-                onClick={e => {
-                  e.preventDefault()
-                  this.goTo(page)
-                }}
-              >
-                {page}
-              </a>
-            )}
-          </li>
-        ))}
-
-        {this.props.showNext && (
-          <li
-            class={`${this.componentNameDash}__item ${
-              this.componentNameDash
-            }__item--next ${
-              this.props.current === this.props.pages
-                ? `${this.componentNameDash}__item--disabled`
-                : ''
-            }`}
-          >
-            {this.props.href && (
-              <a href={sprintf(this.props.href, nextPage)} title={nextPage}>
-                {this.props.showNext}
-              </a>
-            )}
-            {!this.props.href && (
-              <a
-                href={nextPage}
-                title={nextPage}
-                onClick={e => {
-                  e.preventDefault()
-                  this.goTo(nextPage)
-                }}
-              >
-                {this.props.showNext}
-              </a>
-            )}
-          </li>
-        )}
-
-        {this.props.showLast && (
-          <li
-            class={`${this.componentNameDash}__item ${
-              this.componentNameDash
-            }__item--last ${
-              this.props.current === this.props.pages
-                ? `${this.componentNameDash}__item--disabled`
-                : ''
-            }`}
-          >
-            {this.props.href && (
-              <a
-                href={sprintf(this.props.href, this.props.pages)}
-                title={this.props.pages}
-              >
-                {this.props.showLast}
-              </a>
-            )}
-            {!this.props.href && (
-              <a
-                href={this.props.pages}
-                title={this.props.pages}
-                onClick={e => {
-                  e.preventDefault()
-                  this.goTo(this.props.pages)
-                }}
-              >
-                {this.props.showLast}
-              </a>
-            )}
-          </li>
-        )}
+                ${this.props.href
+                  ? html`
+                      <a
+                        href=${sprintf(this.props.href, this.props.pages)}
+                        title=${this.props.pages}
+                      >
+                        ${this.props.showLast}
+                      </a>
+                    `
+                  : ''}
+                ${!this.props.href
+                  ? html`
+                      <a
+                        href=${this.props.pages}
+                        title=${this.props.pages}
+                        @click=${e => {
+                          e.preventDefault()
+                          this.goTo(this.props.pages)
+                        }}
+                      >
+                        ${this.props.showLast}
+                      </a>
+                    `
+                  : ''}
+              </li>
+            `
+          : ''}
       </ul>
-    )
+    `)
   }
 }
