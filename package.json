@@ -76,10 +76,12 @@
     }
   },
   "dependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "coffeekraken-s-lit-html-component": "^1.0.0",
     "coffeekraken-s-template-component": "^1.0.1",
     "coffeekraken-sugar": "^1.0.58",
-    "lodash": "^4.17.11",
-    "@babel/plugin-transform-react-jsx": "^7.3.0"
+    "lit-html": "^1.0.0",
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
