@@ -23,9 +23,6 @@
     "@babel/plugin-proposal-throw-expressions",
     "@babel/plugin-syntax-dynamic-import",
     "@babel/plugin-syntax-import-meta",
-    "@babel/plugin-proposal-object-rest-spread",
-    ["@babel/plugin-transform-react-jsx", {
-      "pragma": "STemplateComponent.createElement"
-    }]
+    "@babel/plugin-proposal-object-rest-spread"
   ]
 }

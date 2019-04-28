@@ -51,11 +51,11 @@ function _typeof(obj) {
 
 function _templateObject16() {
   var data = _taggedTemplateLiteral([
-    '\n                  <a\n                    href=',
-    '\n                    title=',
-    '\n                    @click=',
-    '\n                  >\n                    ',
-    '\n                  </a>\n                '
+    '\n                      <a\n                        href=',
+    '\n                        title=',
+    '\n                        @click=',
+    '\n                      >\n                        ',
+    '\n                      </a>\n                    '
   ])
 
   _templateObject16 = function _templateObject16() {
@@ -67,10 +67,10 @@ function _templateObject16() {
 
 function _templateObject15() {
   var data = _taggedTemplateLiteral([
-    '\n                  <a\n                    href=',
-    '\n                    title=',
-    '\n                  >\n                    ',
-    '\n                  </a>\n                '
+    '\n                      <a\n                        href=',
+    '\n                        title=',
+    '\n                      >\n                        ',
+    '\n                      </a>\n                    '
   ])
 
   _templateObject15 = function _templateObject15() {
@@ -82,10 +82,10 @@ function _templateObject15() {
 
 function _templateObject14() {
   var data = _taggedTemplateLiteral([
-    '\n            <li\n              class=',
-    '\n            >\n              ',
-    '\n              ',
-    '\n            </li>\n          '
+    '\n              <li\n                class=',
+    '\n              >\n                ',
+    '\n                ',
+    '\n              </li>\n            '
   ])
 
   _templateObject14 = function _templateObject14() {
@@ -97,11 +97,11 @@ function _templateObject14() {
 
 function _templateObject13() {
   var data = _taggedTemplateLiteral([
-    '\n                  <a\n                    href=',
-    '\n                    title=',
-    '\n                    @click=',
-    '\n                  >\n                    ',
-    '\n                  </a>\n                '
+    '\n                      <a\n                        href=',
+    '\n                        title=',
+    '\n                        @click=',
+    '\n                      >\n                        ',
+    '\n                      </a>\n                    '
   ])
 
   _templateObject13 = function _templateObject13() {
@@ -113,10 +113,10 @@ function _templateObject13() {
 
 function _templateObject12() {
   var data = _taggedTemplateLiteral([
-    '\n                  <a href=',
-    ' title=',
-    '>\n                    ',
-    '\n                  </a>\n                '
+    '\n                      <a\n                        href=',
+    '\n                        title=',
+    '\n                      >\n                        ',
+    '\n                      </a>\n                    '
   ])
 
   _templateObject12 = function _templateObject12() {
@@ -128,10 +128,10 @@ function _templateObject12() {
 
 function _templateObject11() {
   var data = _taggedTemplateLiteral([
-    '\n            <li\n              class=',
-    '\n            >\n              ',
-    '\n              ',
-    '\n            </li>\n          '
+    '\n              <li\n                class=',
+    '\n              >\n                ',
+    '\n                ',
+    '\n              </li>\n            '
   ])
 
   _templateObject11 = function _templateObject11() {
@@ -143,11 +143,11 @@ function _templateObject11() {
 
 function _templateObject10() {
   var data = _taggedTemplateLiteral([
-    '\n                <a\n                  href=',
-    '\n                  title=',
-    '\n                  @click=',
-    '\n                >\n                  ',
-    '\n                </a>\n              '
+    '\n                    <a\n                      href=',
+    '\n                      title=',
+    '\n                      @click=',
+    '\n                    >\n                      ',
+    '\n                    </a>\n                  '
   ])
 
   _templateObject10 = function _templateObject10() {
@@ -159,10 +159,10 @@ function _templateObject10() {
 
 function _templateObject9() {
   var data = _taggedTemplateLiteral([
-    '\n                <a href=',
-    ' title=',
-    '>\n                  ',
-    '\n                </a>\n              '
+    '\n                    <a\n                      href=',
+    '\n                      title=',
+    '\n                    >\n                      ',
+    '\n                    </a>\n                  '
   ])
 
   _templateObject9 = function _templateObject9() {
@@ -174,10 +174,10 @@ function _templateObject9() {
 
 function _templateObject8() {
   var data = _taggedTemplateLiteral([
-    '\n          <li\n            class=',
-    '\n          >\n            ',
-    '\n            ',
-    '\n          </li>\n        '
+    '\n            <li\n              class=',
+    '\n            >\n              ',
+    '\n              ',
+    '\n            </li>\n          '
   ])
 
   _templateObject8 = function _templateObject8() {
@@ -189,11 +189,11 @@ function _templateObject8() {
 
 function _templateObject7() {
   var data = _taggedTemplateLiteral([
-    '\n                  <a\n                    href=',
-    '\n                    title=',
-    '\n                    @click=',
-    '\n                  >\n                    ',
-    '\n                  </a>\n                '
+    '\n                      <a\n                        href=',
+    '\n                        title=',
+    '\n                        @click=',
+    '\n                      >\n                        ',
+    '\n                      </a>\n                    '
   ])
 
   _templateObject7 = function _templateObject7() {
@@ -205,10 +205,10 @@ function _templateObject7() {
 
 function _templateObject6() {
   var data = _taggedTemplateLiteral([
-    '\n                  <a\n                    href=',
-    '\n                    title=',
-    '\n                  >\n                    ',
-    '\n                  </a>\n                '
+    '\n                      <a\n                        href=',
+    '\n                        title=',
+    '\n                      >\n                        ',
+    '\n                      </a>\n                    '
   ])
 
   _templateObject6 = function _templateObject6() {
@@ -220,10 +220,10 @@ function _templateObject6() {
 
 function _templateObject5() {
   var data = _taggedTemplateLiteral([
-    '\n            <li\n              class=',
-    '\n            >\n              ',
-    '\n              ',
-    '\n            </li>\n          '
+    '\n              <li\n                class=',
+    '\n              >\n                ',
+    '\n                ',
+    '\n              </li>\n            '
   ])
 
   _templateObject5 = function _templateObject5() {
@@ -235,9 +235,9 @@ function _templateObject5() {
 
 function _templateObject4() {
   var data = _taggedTemplateLiteral([
-    '\n                <a\n                  href="1"\n                  title="1"\n                  @click=',
-    '\n                >\n                  ',
-    '\n                </a>\n              '
+    '\n                      <a\n                        href="1"\n                        title="1"\n                        @click=',
+    '\n                      >\n                        ',
+    '\n                      </a>\n                    '
   ])
 
   _templateObject4 = function _templateObject4() {
@@ -249,9 +249,9 @@ function _templateObject4() {
 
 function _templateObject3() {
   var data = _taggedTemplateLiteral([
-    '\n                <a href=',
-    ' title="1">\n                  ',
-    '\n                </a>\n              '
+    '\n                      <a href=',
+    ' title="1">\n                        ',
+    '\n                      </a>\n                    '
   ])
 
   _templateObject3 = function _templateObject3() {
@@ -263,10 +263,10 @@ function _templateObject3() {
 
 function _templateObject2() {
   var data = _taggedTemplateLiteral([
-    '\n          <li\n            class=',
-    '\n          >\n            ',
-    '\n            ',
-    '\n          </li>\n          '
+    '\n              <li\n                class=',
+    '\n              >\n                ',
+    '\n                ',
+    '\n              </li>\n            '
   ])
 
   _templateObject2 = function _templateObject2() {
@@ -280,10 +280,10 @@ function _templateObject() {
   var data = _taggedTemplateLiteral([
     '\n      <ul class=',
     '>\n        ',
-    '\n\n        ',
-    '\n\n        ',
-    '\n\n        ',
-    '\n\n        ',
+    '\n        ',
+    '\n        ',
+    '\n        ',
+    '\n        ',
     '\n      </ul>\n    '
   ])
 
@@ -501,6 +501,8 @@ var SPaginationComponent =
                 this._changePageHandler(newVal, oldVal)
 
                 break
+
+              default:
             }
           }
           /**
@@ -528,7 +530,9 @@ var SPaginationComponent =
               previousPage: previousPage
             }) // chec if the onChange property exist
 
-            this.props.onchange && this.props.onchange(newPage, previousPage)
+            if (this.props.onchange) {
+              this.props.onchange(newPage, previousPage)
+            }
           }
           /**
            * Go to a specific page
@@ -577,7 +581,7 @@ var SPaginationComponent =
         },
         {
           key: 'goToLast',
-          value: function goToLast(e) {
+          value: function goToLast() {
             this.props.current = this.props.pages
           }
           /**

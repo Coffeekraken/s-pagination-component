@@ -1,6 +1,6 @@
 {
   "name": "coffeekraken-s-pagination-component",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create simple and complexe pagination easily with this webcomponent",
   "main": "dist/index.js",
   "homepage": "http://coffeekraken.io",
@@ -76,9 +76,7 @@
     }
   },
   "dependencies": {
-    "@babel/plugin-transform-react-jsx": "^7.3.0",
     "coffeekraken-s-lit-html-component": "^1.0.0",
-    "coffeekraken-s-template-component": "^1.0.1",
     "coffeekraken-sugar": "^1.0.58",
     "lit-html": "^1.0.0",
     "lodash": "^4.17.11"
